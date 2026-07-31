@@ -13,7 +13,7 @@ Panel {
   readonly property var barIdentity: hostWidget || root
 
   readonly property color foreground: Color.popups.text
-  readonly property color activeColor: bar ? bar.urgent : Color.bar.active
+  readonly property color activeColor: Color.accent
   readonly property string fontFamily: bar ? bar.fontFamily : Style.font.family
   property int selectedAction: 0
   property bool cursorActive: true
@@ -68,7 +68,6 @@ Panel {
     owner: root.barIdentity
     bar: root.bar
     open: root.opened
-    centerOnBar: true
     focusTarget: keyCatcher
     contentWidth: panel.fittedContentWidth(Style.space(330))
     contentHeight: panel.fittedContentHeight(content.implicitHeight)
@@ -121,7 +120,7 @@ Panel {
             Text {
               anchors.horizontalCenter: parent.horizontalCenter
               text: root.timerService ? root.timerService.phaseLabel : "Work"
-              color: Color.muted
+              color: root.activeColor
               font.family: root.fontFamily
               font.pixelSize: Style.font.title
             }

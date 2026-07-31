@@ -82,7 +82,7 @@ BarWidget {
       CircularProgress {
         progress: root.timerService ? root.timerService.progress : 0
         trackColor: Color.muted
-        fillColor: root.bar ? root.bar.urgent : Color.bar.active
+        fillColor: Color.accent
         strokeWidth: Math.max(2, Style.spaceReal(2))
       }
     }

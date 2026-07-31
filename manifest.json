@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "author": "Brian Blakely",
   "license": "MIT",
-  "description": "A theme-aware Pomodoro timer for the Omarchy bar.",
+  "description": "A Pomodoro timer for the Omarchy bar.",
   "kinds": ["service", "bar-widget"],
   "entryPoints": {
     "service": "Service.qml",

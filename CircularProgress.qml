@@ -6,7 +6,7 @@ Canvas {
 
   property real progress: 0
   property color trackColor: Color.muted
-  property color fillColor: Color.bar.active
+  property color fillColor: Color.accent
   property real strokeWidth: Math.max(2, Style.spaceReal(3))
 
   antialiasing: true
