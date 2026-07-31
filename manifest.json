@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "b.omadoro",
+  "name": "Omadoro",
+  "version": "0.0.1",
+  "author": "Brian Blakely",
+  "license": "MIT",
+  "description": "A theme-aware Pomodoro timer for the Omarchy bar.",
+  "kinds": ["service", "bar-widget"],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Omadoro",
+    "description": "A circular Pomodoro timer with keyboard-driven controls.",
+    "category": "Time",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "workMinutes": 25,
+      "shortBreakMinutes": 5,
+      "longBreakMinutes": 15,
+      "workPhasesPerLongBreak": 4
+    },
+    "schema": [
+      {
+        "key": "workMinutes",
+        "type": "integer",
+        "label": "Work duration (minutes)",
+        "min": 1,
+        "max": 120,
+        "step": 1,
+        "defaultValue": 25
+      },
+      {
+        "key": "shortBreakMinutes",
+        "type": "integer",
+        "label": "Short break (minutes)",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 5
+      },
+      {
+        "key": "longBreakMinutes",
+        "type": "integer",
+        "label": "Long break (minutes)",
+        "min": 1,
+        "max": 120,
+        "step": 1,
+        "defaultValue": 15
+      },
+      {
+        "key": "workPhasesPerLongBreak",
+        "type": "integer",
+        "label": "Work phases before long break",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+        "defaultValue": 4
+      }
+    ]
+  }
+}
