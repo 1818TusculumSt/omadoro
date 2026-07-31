@@ -132,9 +132,16 @@ Panel {
           id: actions
           anchors.horizontalCenter: parent.horizontalCenter
           spacing: Style.space(10)
+          readonly property real buttonSize: Math.ceil(Math.max(
+            stopButton.implicitWidth, stopButton.implicitHeight,
+            pauseButton.implicitWidth, pauseButton.implicitHeight,
+            addButton.implicitWidth, addButton.implicitHeight,
+            skipButton.implicitWidth, skipButton.implicitHeight))
 
           Button {
             id: stopButton
+            width: actions.buttonSize
+            height: actions.buttonSize
             iconText: root.timerService && root.timerService.stopped ? "" : ""
             tooltipText: root.timerService && root.timerService.stopped
               ? "Start a new Pomodoro"
@@ -153,6 +160,8 @@ Panel {
 
           Button {
             id: pauseButton
+            width: actions.buttonSize
+            height: actions.buttonSize
             iconText: root.timerService && root.timerService.paused ? "" : ""
             tooltipText: root.timerService && root.timerService.paused
               ? "Resume current phase"
@@ -171,6 +180,8 @@ Panel {
 
           Button {
             id: addButton
+            width: actions.buttonSize
+            height: actions.buttonSize
             iconText: "󰐕"
             tooltipText: "Add 5 minutes"
             foreground: root.foreground
@@ -187,6 +198,8 @@ Panel {
 
           Button {
             id: skipButton
+            width: actions.buttonSize
+            height: actions.buttonSize
             iconText: ""
             tooltipText: "Skip to next phase"
             foreground: root.foreground
