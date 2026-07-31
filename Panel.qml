@@ -132,14 +132,12 @@ Panel {
           id: actions
           anchors.horizontalCenter: parent.horizontalCenter
           spacing: Style.space(10)
-          readonly property real buttonSize: Math.ceil(Math.max(
-            stopButton.implicitWidth, stopButton.implicitHeight,
-            pauseButton.implicitWidth, pauseButton.implicitHeight,
-            addButton.implicitWidth, addButton.implicitHeight,
-            skipButton.implicitWidth, skipButton.implicitHeight))
+          readonly property real buttonSize: Style.space(42)
 
           Button {
             id: stopButton
+            implicitWidth: actions.buttonSize
+            implicitHeight: actions.buttonSize
             width: actions.buttonSize
             height: actions.buttonSize
             iconText: root.timerService && root.timerService.stopped ? "" : ""
@@ -149,8 +147,8 @@ Panel {
             foreground: root.foreground
             accent: root.activeColor
             iconSize: Style.font.iconLarge
-            horizontalPadding: Style.space(12)
-            verticalPadding: Style.space(9)
+            horizontalPadding: 0
+            verticalPadding: 0
             enabled: !!root.timerService && root.timerService.initialized
             opacity: enabled ? 1 : 0.35
             hasCursor: root.cursorActive && root.selectedAction === 0
@@ -160,6 +158,8 @@ Panel {
 
           Button {
             id: pauseButton
+            implicitWidth: actions.buttonSize
+            implicitHeight: actions.buttonSize
             width: actions.buttonSize
             height: actions.buttonSize
             iconText: root.timerService && root.timerService.paused ? "" : ""
@@ -169,8 +169,8 @@ Panel {
             foreground: root.foreground
             accent: root.activeColor
             iconSize: Style.font.iconLarge
-            horizontalPadding: Style.space(12)
-            verticalPadding: Style.space(9)
+            horizontalPadding: 0
+            verticalPadding: 0
             enabled: !!root.timerService && root.timerService.initialized && !root.timerService.stopped
             opacity: enabled ? 1 : 0.35
             hasCursor: root.cursorActive && root.selectedAction === 1
@@ -180,6 +180,8 @@ Panel {
 
           Button {
             id: addButton
+            implicitWidth: actions.buttonSize
+            implicitHeight: actions.buttonSize
             width: actions.buttonSize
             height: actions.buttonSize
             iconText: "󰐕"
@@ -187,8 +189,8 @@ Panel {
             foreground: root.foreground
             accent: root.activeColor
             iconSize: Style.font.iconLarge
-            horizontalPadding: Style.space(12)
-            verticalPadding: Style.space(9)
+            horizontalPadding: 0
+            verticalPadding: 0
             enabled: !!root.timerService && root.timerService.initialized && !root.timerService.stopped
             opacity: enabled ? 1 : 0.35
             hasCursor: root.cursorActive && root.selectedAction === 2
@@ -198,6 +200,8 @@ Panel {
 
           Button {
             id: skipButton
+            implicitWidth: actions.buttonSize
+            implicitHeight: actions.buttonSize
             width: actions.buttonSize
             height: actions.buttonSize
             iconText: ""
@@ -205,8 +209,8 @@ Panel {
             foreground: root.foreground
             accent: root.activeColor
             iconSize: Style.font.iconLarge
-            horizontalPadding: Style.space(12)
-            verticalPadding: Style.space(9)
+            horizontalPadding: 0
+            verticalPadding: 0
             enabled: !!root.timerService && root.timerService.initialized && !root.timerService.stopped
             opacity: enabled ? 1 : 0.35
             hasCursor: root.cursorActive && root.selectedAction === 3
