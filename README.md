@@ -3,6 +3,8 @@
 Omadoro is a [Pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) timer
 for the [Omarchy](https://omarchy.org/) bar.
 
+![Omadoro screenshot](omadoro.png)
+
 ## Install
 
 ```bash
