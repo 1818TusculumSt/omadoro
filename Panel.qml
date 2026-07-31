@@ -70,7 +70,7 @@ Panel {
     open: root.opened
     focusTarget: keyCatcher
     contentWidth: panel.fittedContentWidth(Style.space(330))
-    contentHeight: panel.fittedContentHeight(content.implicitHeight)
+    contentHeight: contentWidth
 
     PanelKeyCatcher {
       id: keyCatcher
@@ -92,7 +92,8 @@ Panel {
         Item {
           id: timerFace
           width: parent.width
-          height: Style.space(245)
+          height: Math.max(1, panel.contentHeight - panel.verticalContentInset
+                           - content.spacing - actions.implicitHeight)
 
           CircularProgress {
             anchors.centerIn: parent
@@ -128,6 +129,7 @@ Panel {
         }
 
         Row {
+          id: actions
           anchors.horizontalCenter: parent.horizontalCenter
           spacing: Style.space(10)
 
