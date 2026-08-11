@@ -3,12 +3,12 @@
 Omadoro is a [Pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) timer
 for the [Omarchy](https://omarchy.org/) bar.
 
-![Omadoro screenshot](omadoro.png)
+![Omadoro screenshot](preview.png)
 
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/brianblakely/omadoro.git --enable
+omarchy plugin add https://github.com/brianblakely/omadoro.git --enable --yes
 ```
 
 ## Use
@@ -64,4 +64,10 @@ New values apply from the next phase onward.
 
 ```bash
 omarchy plugin update b.omadoro
+```
+
+## Uninstall
+
+```bash
+omarchy plugin remove b.omadoro
 ```
